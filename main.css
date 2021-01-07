@@ -1,0 +1,193 @@
+
+
+:root {     
+ /*   
+  flatuicolors.com sitesinden renk seçtim
+ */
+    --main-color:rgba(253, 114, 114,1.0);
+    --main-color-light:rgba(253, 114, 114,0.2);
+    --accent-color:rgba(0, 168, 255,1.0);
+    --accent-color-light:rgba(0, 168, 255,0.5);
+
+
+}
+
+*{
+
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+/*     sayfadaki yazılar düzeni satırdan itibaren yazılır */
+}       
+
+
+
+body {
+   
+    font-family: 'Open Sans', sans-serif;
+/*         // google operantstan sitesinden yaptım
+        // css ten yazı tipini değiştirdim
+ */
+   
+    background-image: linear-gradient(to bottom right, var(--main-color) , var(--main-color-light));
+/*         main-color ile accent-color arası bir renk geçişi olsun
+ */
+    background-repeat: no-repeat;
+/*     bu kayma tekrarlanmasın bir kere olsun
+ */
+    min-height: 100vh;
+   /*   arka plan boyutu */
+}
+
+
+.main-title{
+
+    font-size: 2rem;
+    color: white;
+/*     sayfanın başlığı 2rem boyutunda ve   rengi beyaz olsun */
+      
+/*                                                       ******************** kendi yazdığım************/
+    display: flex;              /* Not sepeti yazısını ortalamak için */
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.headr, .gorev-form{
+
+    min-height: 20vh;
+/*     <formdaki class ın içindeki gorev-forma eriştik
+        .gorev- form dedik çünkü class
+             HEADER KISMI İÇİM 
+         minumum yüksekliği ekranın %20 si kadar olsun*/
+
+        margin: 0.5rem;
+        /* marginin 1remlik yer tutar yani  */
+
+        
+/*         aşağıdaki elemanları ortalamak için yani yazılan */
+        display: flex;                  /* formun içindeki button flex yap  */
+        justify-content: center;           /*  button ortaya gelsin  */
+        align-items: center;                
+
+
+}
+
+
+
+.form-item{
+
+/*    index.html dosyasında   <form içindeki 'form-item' yazanlara gitti  
+     bunlara . dediği için classlarında yazan form-itemlara baktık
+     bunlar <input    ve       <button olanlar           */
+
+
+     /*  button üzerindeki değişiklikleri yapar */
+    padding: .5rem;
+    font-size: 1.5rem;                       /*   buttonun size boyutu */
+    border: none;                          /* buttonun yanındaki kutucuk arası çizgiler olamsın none */
+    background-color: white;           /*  button içi beyaz */
+    outline: none;                      /* button içindeki yazının altı beyaz olsun */
+
+}
+
+.btn-gorev-ekle{              /* btn-gorev-ekle arar classını */
+    
+    
+    color:var(--accent-color);              /* BUTTONUN İÇİNDEKİ RENGİNİ accent color rengi yap */
+    cursor: pointer;                
+}
+
+
+.btn-gorev-ekle{            /* BUTTONUN RENGİNİ accent color rengi yap */
+
+  color: white;
+  background-color: var(--accent-color);
+}
+
+
+
+
+.gorev-container{              /*    <dive bakar       .gorev-contaniera classsına bakar  */
+
+    display: flex;
+    justify-content: center;        /* markete git yazısını mekreze ortalar */
+    align-items: center;
+    
+}
+
+
+.gorev-listesi{                /*  <ul ye gider   classın içindeki .gorev-listesi bakar */
+
+    list-style: none;       /*  başında olan .(nokta) yazısından list-style olmasın */
+    min-width: 40%;         /*      ekranın %40 kadar gözüksün */
+    
+}
+
+
+.gorev-item{        /*  <div   e gider   classın içindeki .gorev-itema bakar */
+
+    display: flex;
+    justify-content: center;        /* markete git yazılarını ortala */
+    align-items: center;
+
+    margin: 0.5rem;                /*  markete git boyutu */
+
+    background-color: white;
+    transition: 5s ease-in-out;
+}
+
+.gorev-tanim{        /*  <li   e gider   classın içindeki .gorev-tanıma bakar */
+
+    flex: 1;           /*  markete git yazısı bütün alana yayılsın buttonlar içerikleri kadar yer tutsun */
+
+    font-size: 1.3rem;
+    padding: 1rem;
+
+}
+
+
+       /*  buttonları ayarlaması */
+.gorev-btn{        /*  gorev-btn diyince tamamlandı ve tamamlanmadıyı değiştirir*/
+
+    background-color: var(--accent-color);          /* buttonun renklerini --accent-color */
+    outline: none;
+    border: none;                         /*   button üzerindeki çerçeveler olmasın none */
+    font-size: 1.3rem;
+    padding: 1.1rem;
+    
+}
+
+.gorev-btn-sil{
+
+    background-color: red;
+
+}
+
+
+
+.gorev-tamamlandi{
+
+    text-decoration: line-through;        /*   tamamlanmış görevi üzrinde çizgi olarak ifade eder */
+
+    opacity: 0.5;                           /*    tamamlanmış görevi hafif silik şekilde yazar */
+
+}
+
+
+/* 
+ gorevler silindikten sonra tıklanma olmasın diye yani silik olanları için
+ bunlarda sınıf adının ortak olduğu .fas olduğu için */
+.fas{
+
+    pointer-events: none;
+}
+
+
+
+.kaybol{
+
+    transform: scale(0);
+}
